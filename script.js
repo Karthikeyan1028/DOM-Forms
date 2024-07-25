@@ -7,7 +7,7 @@ div.append(h1);
 
 document.body.append(div);
 
-//!Creating the form element with id = "survey-form"
+
 const form = document.createElement("form");
 form.setAttribute("id", "survey-form");
 form.setAttribute("class", "survey-form");
@@ -15,7 +15,7 @@ form.setAttribute("class", "survey-form");
 const container = document.createElement("div");
 container.setAttribute("class", "form-group");
 
-//! Creating the First-Name label and inputs for form
+
 const firstNameLabel = document.createElement("label");
 firstNameLabel.setAttribute("id", "name-label");
 firstNameLabel.innerText = "First-Name : ";
@@ -26,7 +26,7 @@ firstNameInput.setAttribute("placeholder", "First-Name");
 firstNameInput.required = true;
 container.append(firstNameLabel, firstNameInput);
 
-//! Creating the Last-Name label and inputs for form
+
 const lastNameLabel = document.createElement("label");
 lastNameLabel.innerText = "Last-Name : ";
 const lastNameInput = document.createElement("input");
@@ -36,7 +36,7 @@ lastNameInput.setAttribute("placeholder", "Last-Name");
 lastNameInput.required = true;
 container.append(lastNameLabel, lastNameInput);
 
-//! Creating the Email label and inputs for form
+
 const emailLabel = document.createElement("label");
 emailLabel.setAttribute("id", "email-label");
 emailLabel.innerText = "E-mail : ";
@@ -47,7 +47,7 @@ emailInput.setAttribute("placeholder", "E-mail");
 emailInput.required = true;
 container.append(emailLabel, emailInput);
 
-//! Creating the Address label and inputs for form
+
 const addressLabel = document.createElement("label");
 addressLabel.innerText = "Address : ";
 const addressInput = document.createElement("input");
@@ -57,7 +57,7 @@ addressInput.setAttribute("placeholder", "Address");
 addressInput.required = true;
 container.append(addressLabel, addressInput);
 
-//! Creating the Pincode label and inputs for form
+
 const pincodeLabel = document.createElement("label");
 pincodeLabel.innerText = "Pincode : ";
 const pincodeInput = document.createElement("input");
@@ -67,7 +67,7 @@ pincodeInput.setAttribute("placeholder", "Pincode");
 pincodeInput.required = true;
 container.append(pincodeLabel, pincodeInput);
 
-//! Creating the Gender label and inputs for form
+
 const genderLabel = document.createElement("label");
 genderLabel.innerText = "Gender : ";
 
@@ -92,7 +92,7 @@ femaleInput.required = true;
 genderLabel.append(femaleLabel, femaleInput);
 container.append(genderLabel);
 
-//! Creating the Food label and inputs for form
+
 const foodLabel = document.createElement("label");
 foodLabel.innerText = "Choice of Food : ";
 foodLabel.setAttribute("id", "foodLabel");
@@ -133,18 +133,10 @@ food4Input.setAttribute("value", "Noodles");
 food4Input.setAttribute("name", "food");
 foodLabel.append(food4Label, food4Input);
 
-const food5Label = document.createElement("label");
-food5Label.innerText = "Burger";
-const food5Input = document.createElement("input");
-food5Input.setAttribute("type", "checkbox");
-food5Input.setAttribute("id", "food5");
-food5Input.setAttribute("value", "Burger");
-food5Input.setAttribute("name", "food");
-foodLabel.append(food5Label, food5Input);
 
 container.append(foodLabel);
 
-//! Creating the State label and inputs for form
+
 const stateLabel = document.createElement("label");
 stateLabel.innerText = "State : ";
 const stateInput = document.createElement("input");
@@ -154,7 +146,7 @@ stateInput.setAttribute("placeholder", "State");
 stateInput.required = true;
 container.append(stateLabel, stateInput);
 
-//! Creating the Country label and inputs for form
+
 const countryLabel = document.createElement("label");
 countryLabel.innerText = "Country : ";
 const countryInput = document.createElement("input");
@@ -164,20 +156,18 @@ countryInput.setAttribute("placeholder", "Country");
 countryInput.required = true;
 container.append(countryLabel, countryInput);
 
-//! Creating the Comments label and inputs for form
+
 const commentsLabel = document.createElement("label");
 commentsLabel.innerText = "Additional Comments : ";
 const commentsTextArea = document.createElement("textarea");
 commentsTextArea.setAttribute("id", "comments");
 container.append(commentsLabel, commentsTextArea);
 
-//! Creating the table
 const table = document.createElement("table");
 table.setAttribute("id", "tableData");
 const thead = document.createElement("thead");
 const trow = document.createElement("tr");
 
-//!Creating the headings for table
 const th1 = document.createElement("th");
 th1.innerText = "State";
 
@@ -206,7 +196,6 @@ trow.append(th1, th2, th3, th4, th5, th6, th7, th8);
 thead.append(trow);
 table.append(thead);
 
-//! Creating the table Body
 const tbody = document.createElement("tbody");
 tbody.setAttribute("id", "table-body");
 
@@ -218,11 +207,11 @@ submitButton.setAttribute("id", "submit");
 container.append(submitButton);
 form.append(container);
 document.body.append(form);
-//! Submit form action
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  //! Getting the values from form by ID
+  
   let firstNameInput = document.getElementById("first-name");
   let lastNameInput = document.getElementById("last-name");
   let emailInput = document.getElementById("email");
@@ -247,12 +236,11 @@ form.addEventListener("submit", (event) => {
   let state = stateInput.value;
   let country = countryInput.value;
 
-  //! Creating a new row in the table
   let table = document.getElementById("tableData");
   let tbody = document.getElementById("table-body");
   let newRow = table.insertRow(table.rows.length);
 
-  //! Inserting the values in the row
+
   let cell1 = newRow.insertCell(0);
   let cell2 = newRow.insertCell(1);
   let cell3 = newRow.insertCell(2);
@@ -272,7 +260,7 @@ form.addEventListener("submit", (event) => {
   cell8.innerHTML = country;
   newRow.append(cell1, cell2, cell3, cell4, cell5, cell6, cell8);
 
-  //! Making the values as null
+  
   firstNameInput.value = "";
   lastNameInput.value = "";
   addressInput.value = "";
@@ -287,7 +275,7 @@ form.addEventListener("submit", (event) => {
   table.append(tbody);
 });
 
-//! function to get the value of the selected radio button
+
 function getSelectedRadioValue(radioInputs) {
   for (let i = 0; i < radioInputs.length; i++) {
     if (radioInputs[i].checked) {
@@ -297,7 +285,7 @@ function getSelectedRadioValue(radioInputs) {
   return null;
 }
 
-//! function to reset radio buttons
+
 function resetRadioButtons(radioInputs) {
   for (let i = 0; i < radioInputs.length; i++) {
     radioInputs[i].checked = false;
