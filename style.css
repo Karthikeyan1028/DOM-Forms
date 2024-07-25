@@ -1,0 +1,55 @@
+body {      
+    background-image:linear-gradient(75deg, lightsalmon,rgb(47, 188, 235));
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .heading {
+    text-align: center;
+    font-size: 30px;
+    color: dimgray;
+    
+    
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    margin: 25px;
+    gap: 15px;
+    font-size: 25px;   
+  }
+  input {
+    padding: 10px;
+    gap: 10px;
+  }
+  button {
+    width: 40%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: 150px;
+    background-color: blue ;
+    border-radius: 25px;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: hsl(240, 100%, 60%)
+  }
+  table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: darksalmon
+  }
+  th {
+    background-color: black;
+    color: ghostwhite;
+  }
+  th,
+  td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-weight: bolder;
+  }
